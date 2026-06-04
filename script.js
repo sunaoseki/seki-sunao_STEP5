@@ -1,7 +1,5 @@
 const tableBody = document.getElementById('tableBody');
 
-let count = 0;
-
 const textInput = document.getElementById('textInput');
 const displayButton = document.getElementById('displayButton');
 const displayArea = document.getElementById('displayArea');
@@ -16,7 +14,7 @@ displayButton.addEventListener('click', function() {
     } else {
         error.textContent = '';
         displayArea.textContent = text;
-        displayArea.classList.toggle('highlight');
+        displayArea.classList.add('highlight');
 
         const row = document.createElement('tr');
 
@@ -30,13 +28,6 @@ deleteButton.textContent = '削除';
 
 deleteButton.addEventListener('click', function() {
     row.remove();
-
-    count--;
-
-    if (count < 3) {
-        displayButton.style.display = 'inline-block';
-    }
-
 });
 
 deleteCell.appendChild(deleteButton);
@@ -46,10 +37,8 @@ row.appendChild(deleteCell);
 
 tableBody.appendChild(row);
 
-count++;
-
-if (count >= 3) {
-    displayButton.style.display = 'none';
+if (tableBody.rows.length > 3) {
+    tableBody.deleteRow(0);
 }
 
     }
