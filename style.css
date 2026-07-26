@@ -3,3 +3,7 @@
     font-weight: bold;
     padding: 10px;
 }
+
+td button {
+    display: inline-block;
+}

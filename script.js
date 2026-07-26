@@ -40,6 +40,11 @@ displayButton.addEventListener('click', function() {
 addButton.addEventListener('click', function() {
     const text = textInput.value;
 
+    if (text.trim() === '') {
+        alert('入力値が空です。');
+        return;
+    }
+
     // 3件ある場合は、最も古い行を削除
     if (tableBody.rows.length >= 3) {
         tableBody.deleteRow(0);
@@ -53,6 +58,7 @@ addButton.addEventListener('click', function() {
     const deleteCell = document.createElement('td');
 
     const deleteButton = document.createElement('button');
+    console.log('削除ボタンを作ります');
     deleteButton.textContent = '削除';
 
     deleteButton.addEventListener('click', function() {
