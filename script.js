@@ -8,7 +8,6 @@ const rowCount = document.getElementById('rowCount');
 const colorButton = document.getElementById('colorButton');
 
 
-// 行数を更新する関数
 function updateRowCount() {
     const count = tableBody.rows.length;
 
@@ -22,7 +21,6 @@ function updateRowCount() {
 }
 
 
-// 「表示」ボタン
 displayButton.addEventListener('click', function() {
     const text = textInput.value;
 
@@ -36,7 +34,6 @@ displayButton.addEventListener('click', function() {
 });
 
 
-// 「追加」ボタン
 addButton.addEventListener('click', function() {
     const text = textInput.value;
 
@@ -45,7 +42,7 @@ addButton.addEventListener('click', function() {
         return;
     }
 
-    // 3件ある場合は、最も古い行を削除
+
     if (tableBody.rows.length >= 3) {
         tableBody.deleteRow(0);
     }
@@ -77,7 +74,6 @@ addButton.addEventListener('click', function() {
 });
 
 
-// 背景色を変更
 const colors = [
     'lightblue',
     'lightgreen',
@@ -97,7 +93,6 @@ colorButton.addEventListener('click', function() {
 });
 
 
-// 1から5まで表示
 for (let i = 1; i <= 5; i++) {
     console.log(i + '回目のループです');
 }
